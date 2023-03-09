@@ -6,9 +6,14 @@ import SearchMovies from '../SearchMovies/SearchMovies';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
-interface Props {
-  title: string;
-}
+ interface Props {
+   title: string;
+   id: number;
+   Year: string;
+   imdbID: string;
+   Type: string;
+   Poster: string;
+ }
 interface Ui5ImageProps {
   src: string;
   alt: string;
@@ -23,7 +28,7 @@ declare global {
   }
 }
 
-const Main = (props: Props) => {
+const Main: React.FC = () => {
   return (
 
     <>
@@ -37,12 +42,12 @@ const Main = (props: Props) => {
           </FlexBox>
 
           <FlexBox className="search-form" direction="Row" justifyContent="Center" alignItems="Center" style={{ height: '50px'}}>
-            <SearchMovies />
+            {/* <Title level="H2" >{title}</Title> */}
+            <SearchMovies id={1} title="Meu Filme" Poster="url-do-poster" Year="2022" imdbID="tt123456" Type="movie" />
           </FlexBox>
 
       <DynamicSideContent>
         <div>
-            <Title level="H2" >{props.title}</Title>
             <FlexBox direction="Row" alignItems="Center" style={{ height: '50px', margin:'5px' }}>
             <p className='container'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ex mi, elementum et ante commodo, semper sollicitudin magna. Sed dapibus ut tortor quis varius. Sed luctus sem at nunc porta vulputate. Suspendisse lobortis arcu est, quis ultrices ipsum fermentum a. Vestibulum a ipsum placerat ligula gravida fringilla at id ex. Etiam pellentesque lorem sed sagittis aliquam. Quisque semper orci risus, vel efficitur dui euismod aliquet. Morbi sapien sapien, rhoncus et rutrum nec, rhoncus id nisl. Cras non tincidunt enim, id eleifend neque.</p>
             </FlexBox>

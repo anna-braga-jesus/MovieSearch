@@ -1,10 +1,10 @@
 import { Form } from '@ui5/webcomponents-react';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import MovieList from '../SearchMovies/SearchResults';
+//import MovieList from '../SearchMovies/SearchResults';
 
 export interface Movie {
-  Title: string;
+  title: string;
   id: number;
   Year: string;
   imdbID: string;
@@ -12,7 +12,7 @@ export interface Movie {
   Poster: string;
 }
 
-const SearchMovies: React.FC = () => {
+const SearchMovies: React.FC<Movie> = ({ id, title, Poster, Year, imdbID, Type }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const dispatch = useDispatch();
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -47,6 +47,7 @@ const SearchMovies: React.FC = () => {
   };
 
   return (
+    <>  
     <div>
       <Form onSubmit={handleSearchMovies}>
         <input
@@ -60,8 +61,14 @@ const SearchMovies: React.FC = () => {
         </button>
       </Form>
       {errorMessage && <div>{errorMessage}</div>}
-      {movies.length > 0 && <MovieList movies={movies} />}
+      {/* {movies.length > 0 && <MovieList movies={movies} />} */}
     </div>
+    <div key={imdbID}>
+               <h3>{title}</h3>
+               <p>{Year}</p>
+               <img src={Poster} alt={title} />
+             </div>
+    </>
   );
 };
 
