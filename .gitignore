@@ -1,0 +1,51 @@
+# Dependency directories
+/node_modules
+/dist
+/.cache
+/.yarn
+
+# Local development files
+/.env.local
+/.env.development.local
+/.env.test.local
+/.env.production.local
+/*.log
+
+# Build files
+/build
+/out
+
+# IDE directories
+/.idea
+/.vscode
+
+# Compiled CSS
+*.css
+
+# Redux store
+/store
+
+# NestJS cache directories
+/.nestjs
+/cache
+/temp
+
+# UI5 Web Components theme files
+/themes
+
+# UI5 Web Components build directories
+/dist
+/temp
+
+# Compiled NestJS files
+/dist
+*.map
+*.js.map
+
+# Compiled SCSS files
+*.css.map
+*.css
+
+# NestJS logs
+logs
+*.pid

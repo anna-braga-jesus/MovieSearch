@@ -1,0 +1,133 @@
+// Definição de estilos para o título
+h1 {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+// Definição de estilos para o texto
+p {
+  margin-top: 1rem;
+  max-width: 90%;
+  justify-content: center;
+}
+
+// Definição de estilos para a linha de search
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  //height: 50px;
+}
+
+// Definição de estilos para o review
+.review {
+  position: relative;
+
+  &::before {
+    content: "★★★★★";
+    font-size: 20px;
+    color: #ccc;
+  }
+
+  &::after {
+    content: "★★★★★";
+    font-size: 20px;
+    color: #f7bf31;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 0;
+  }
+
+  .star {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-left: -20px;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "★";
+      position: absolute;
+      font-size: 20px;
+    }
+
+    &::before {
+      color: #ccc;
+    }
+
+    &::after {
+      color: #f7bf31;
+      clip: rect(0, 10px, 20px, 0);
+    }
+  }
+}
+
+
+// Definição de estilos para os botões
+button {
+  width: 100%;
+  height: 2rem;
+  border-radius: 0.25rem;
+  border: none;
+  font-size: 1rem;
+  padding: 0.25rem 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+// Definição de estilos para o botão Search
+.search-button {
+  background-color: #007bff;
+  color: #fff;
+  margin-left: 0.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  p {
+    text-align: center;
+    
+    &:first-of-type {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+
+// Definição de estilos para o botão Reset
+.reset-button {
+  background-color: #6c757d;
+  color: #fff;
+  margin-left: 0.5rem;
+}
+
+// Definição de estilos para o formulário de busca
+.search-form {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 20%;
+
+  input {
+    height: 2rem;
+    padding: 0.25rem;
+    font-size: 1rem;
+    flex: 1;
+    //margin-right: 0.5rem;
+    //margin: 0 10px;
+  }
+}
